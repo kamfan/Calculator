@@ -19,6 +19,12 @@ public class Main {
                 case 2:
                     substractionOperation(scanner, calculator);
                     break;
+                case 3:
+                    multiplicationOperation(scanner, calculator);
+                    break;
+                case 4:
+                    divisionOperation(scanner, calculator);
+                    break;
                 default:
                     exit = true;
             }
@@ -27,13 +33,23 @@ public class Main {
     }
     private static void printInfo(){
         System.out.println("*************");
-        System.out.println("Choose operation 1(+), 2(-), other number to exit");
+        System.out.println("Choose operation 1(+), 2(-), 3(*), 4(/), other number to exit");
         System.out.println("Enter: ");
     }
 
     private static void additionOperation(Scanner scanner, Calculator calculator) {
         int [] twoNumbersFromInput = getTwoNumbersFromInput(scanner);
         int result = calculator.addition(twoNumbersFromInput[0], twoNumbersFromInput[1]);
+        System.out.println(twoNumbersFromInput[0] + " - " + twoNumbersFromInput[1] + "  = " + result);
+    }
+    private static void multiplicationOperation(Scanner scanner, Calculator calculator) {
+        int [] twoNumbersFromInput = getTwoNumbersFromInput(scanner);
+        int result = calculator.multiplication(twoNumbersFromInput[0], twoNumbersFromInput[1]);
+        System.out.println(twoNumbersFromInput[0] + " - " + twoNumbersFromInput[1] + "  = " + result);
+    }
+    private static void divisionOperation(Scanner scanner, Calculator calculator) {
+        int [] twoNumbersFromInput = getTwoNumbersFromInput(scanner);
+        int result = calculator.division(twoNumbersFromInput[0], twoNumbersFromInput[1]);
         System.out.println(twoNumbersFromInput[0] + " - " + twoNumbersFromInput[1] + "  = " + result);
     }
     private static void substractionOperation(Scanner scanner, Calculator calculator) {
